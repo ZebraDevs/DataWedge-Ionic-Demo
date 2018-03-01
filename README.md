@@ -49,6 +49,6 @@ In either case, ensure you have a Datawedge profile on the device.  You can do t
 
 ##  Use
 
-There are two sections to the UI, at the top you can configure scanning attributes such as chosing the supported decoders.  Note that some configuration features will require a minimum version of Datawedge.  You can initiate a soft trigger scan using the floating action button.
+There are two sections to the UI, at the top you can configure scanning attributes such as choosing the supported decoders.  Note that some configuration features will require a minimum version of Datawedge.  You can initiate a soft trigger scan using the floating action button.
 
-**ALL** versions of Datawedge support scanning bardodes. 
+**ALL** versions of Datawedge support scanning barcodes. 
