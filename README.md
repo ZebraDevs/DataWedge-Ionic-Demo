@@ -44,6 +44,7 @@ In either case, ensure you have a Datawedge profile on the device.  You can do t
   - Configure the intent output plugin to send broadcast intents to `com.zebra.ionicdemo.ACTION`
   
 ![Profile configuration 1](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/profile_activities.png)
+
 ![Profile configuration 2](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/profile_output.png)
 
 ##  Use
