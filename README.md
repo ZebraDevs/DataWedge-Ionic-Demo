@@ -52,3 +52,9 @@ In either case, ensure you have a Datawedge profile on the device.  You can do t
 There are two sections to the UI, at the top you can configure scanning attributes such as choosing the supported decoders.  Note that some configuration features will require a minimum version of Datawedge.  You can initiate a soft trigger scan using the floating action button.
 
 **ALL** versions of Datawedge support scanning barcodes. 
+
+##  Dependencies
+
+In order to interact with the Datawedge service on Zebra devices this application relies on a 3rd party component to provide the Android Intent interface.  Please be sure to add the [Cordova plugin intent](https://www.npmjs.com/package/com-darryncampbell-cordova-plugin-intent) package to your application if you are using this code as a template for your own application:
+
+`ionic cordova plugin add com-darryncampbell-cordova-plugin-intent`
