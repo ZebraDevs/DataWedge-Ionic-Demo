@@ -75,7 +75,7 @@ export class HomePage {
       this.barcodeProvider.sendCommand("com.symbol.datawedge.api.CREATE_PROFILE", "ZebraIonicDemo");
       this.dataWedgeVersion = "6.3.  Please configure profile manually.  See the ReadMe for more details.";
 
-      //  Although we created the profile we can only configure it with DW 6.5.
+      //  Although we created the profile we can only configure it with DW 6.4.
       this.barcodeProvider.sendCommand("com.symbol.datawedge.api.GET_ACTIVE_PROFILE", "");
 
       //  Enumerate the available scanners on the device

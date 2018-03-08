@@ -80,8 +80,8 @@
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <plugin name="com-darryncampbell-cordova-plugin-intent" spec="^0.1.1" />
     <allow-navigation href="http://192.168.0.2:8100" />
     <plugin name="cordova-plugin-device" spec="^2.0.1" />
     <engine name="android" spec="7.0.0" />
+    <plugin name="com-darryncampbell-cordova-plugin-intent" spec="^0.1.2" />
 </widget>
