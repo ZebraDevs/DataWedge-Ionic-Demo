@@ -203,6 +203,22 @@ export class HomePage {
   //  Function to handle changes in the decoder checkboxes.  
   //  Note: SET_CONFIG only available on DW 6.4+ per the docs
   public setDecoders() {
+    var paramList = {
+      "scanner_selection": "auto",
+      "decoder_ean8": "" + this.ean8Decoder,
+      "decoder_ean13": "" + this.ean13Decoder,
+      "decoder_code128": "" + this.code128Decoder,
+      "decoder_code39": "" + this.code39Decoder
+    }
+    //  The "scanner_selection" parameter supports "auto" to apply to the default scanner.
+    //  If we have selected a different scanner we need to ensure the settings are applied
+    //  to the correct scanner by specifying "current-device-id".  See http://techdocs.zebra.com/datawedge/6-7/guide/api/setconfig/
+    //  for more information.  selectedScannerId will be >-1 if the user has chosen a specific scanner.
+    if (this.selectedScannerId > -1)
+    {
+      paramList["current-device-id"] = "" + this.selectedScannerId;
+      delete paramList["scanner_selection"];
+    }
     //  Set the new configuration
     let profileConfig = {
       "PROFILE_NAME": "ZebraIonicDemo",
@@ -210,14 +226,7 @@ export class HomePage {
       "CONFIG_MODE": "UPDATE",
       "PLUGIN_CONFIG": {
         "PLUGIN_NAME": "BARCODE",
-        "PARAM_LIST": {
-          //"current-device-id": this.selectedScannerId,
-          "scanner_selection": "auto",
-          "decoder_ean8": "" + this.ean8Decoder,
-          "decoder_ean13": "" + this.ean13Decoder,
-          "decoder_code128": "" + this.code128Decoder,
-          "decoder_code39": "" + this.code39Decoder
-        }
+        "PARAM_LIST": paramList
       }
     };
     this.barcodeProvider.sendCommand("com.symbol.datawedge.api.SET_CONFIG", profileConfig);
