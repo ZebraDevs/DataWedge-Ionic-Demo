@@ -22,6 +22,9 @@ To build this application:
 - Connect Zebra device to adb
 - `ionic cordova run android --device`
 
+##   DataWedge
+This application is designed to use DataWedge.  DataWedge is only available on Zebra mobile computing devices and provides access to the device hardware scanner(s) including the laser imager, attached Bluetooth scanners and camera imager; **it is not a software scanning library**.
+
 ##   Setup
 Any Zebra mobile computer running Android which supports Datawedge should work with this sample but the complexity of setup will depend 
 
@@ -46,6 +49,10 @@ In either case, ensure you have a Datawedge profile on the device.  You can do t
 ![Profile configuration 1](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/profile_activities.png)
 
 ![Profile configuration 2](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/profile_output.png)
+
+### Older Devices
+- Devices branded as 'Motorola Solutions' (identifyable by the Motorola logo) will need to use a recent version of this demo app as earlier versions did not detect this manufacturer.  Motorola Solutions is one of the ancestor companies which now make up Zebra Technologies.  
+- Jellybean devices will not run with the latest version of Ionic.  Some users have reported success by using the crosswalk rendering engine but since crosswalk is no longer maintained and recent forum posts report incompatibility with the Android 28 support libraries, users targeting Jellybean devices may wish to seek an alternative solution.
 
 ##  Use
 
