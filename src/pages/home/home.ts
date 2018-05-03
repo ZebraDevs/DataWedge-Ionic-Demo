@@ -46,7 +46,7 @@ export class HomePage {
 
       //  Check manufacturer.  Exit if this app is not running on a Zebra device
       console.log("Device manufacturer is: " + this.device.manufacturer);
-      if (!(this.device.manufacturer.toLowerCase().includes("zebra"))) {
+      if (!(this.device.manufacturer.toLowerCase().includes("zebra") || this.device.manufacturer.toLowerCase().includes("motorola solutions"))) {
         let alert = this.alertController.create({
           title: 'Requires Zebra device',
           subTitle: 'This application requires a Zebra mobile device in order to run',
@@ -197,6 +197,11 @@ export class HomePage {
         let scannedData = scanData.extras["com.symbol.datawedge.data_string"];
         let scannedType = scanData.extras["com.symbol.datawedge.label_type"];
         this.scans.unshift({ "data": scannedData, "type": scannedType, "timeAtDecode": time });
+
+        //  On older devices, if a scan is received we can assume the profile was correctly configured manually
+        //  so remove the yellow highlight.
+        this.uiDatawedgeVersionAttention = false;
+
         this.changeDetectorRef.detectChanges();
       });
 
