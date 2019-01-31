@@ -9,7 +9,7 @@ import { BarcodeProvider } from '../../providers/barcode/barcode';
 import { Events } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
-import { Device } from '@ionic-native/device';
+import { Device } from '@ionic-native/device/ngx';
 import { ToastController } from 'ionic-angular';
 
 @Component({

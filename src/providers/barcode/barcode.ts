@@ -4,7 +4,7 @@
 */
 
 import { Injectable } from '@angular/core';
-import { WebIntent } from '@ionic-native/web-intent';
+import { WebIntent } from '@ionic-native/web-intent/ngx';
 import { Events } from 'ionic-angular';
 
 @Injectable()
