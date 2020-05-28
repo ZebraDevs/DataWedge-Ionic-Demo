@@ -1,9 +1,9 @@
 # DataWedge Ionic Demo (Formally ZebraIonicDemo)
 This project shows a sample Ionic 3 application which uses DataWedge to capture barcode data on Zebra mobile devices
 
-![Application](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/application01.png)
+![Application](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/application02.jpg)
 
-## Ionic v4 / v5 and WebIntent
+## Ionic v4 / v5 / v6N and WebIntent
 I have had several questions about whether this application works with Ionic v4 or v5 and issues surrounding the integration with [WebIntent](https://ionicframework.com/docs/native/web-intent).  This application has been written against Ionic v3 and uses the [Cordova plugin](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) directly however, if you would like to see a version of this application that compiles with Ionic v4 & v5 and uses [WebIntent](https://ionicframework.com/docs/native/web-intent) then please see the '[Transition_To_WebIntent](https://github.com/Zebra/ZebraIonicDemo/tree/Transition_To_WebIntent)' branch. 
 
 ##  License
