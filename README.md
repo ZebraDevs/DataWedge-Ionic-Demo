@@ -9,7 +9,7 @@ The original ZebraIonicDemo was written to target Ionic v3 & users still wishing
 The master branch of this application has been designed to target Ionic v6, including updated dependencies and addressing the breaking changes detailed at https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md
 
 ## WebIntent
-The master branch of this project uses the [Cordova plugin](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) directly to interface with Intents.  An example using [WebIntent](https://ionicframework.com/docs/native/web-intent) is **under work**.
+The master branch of this project uses the [Cordova plugin](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) directly to interface with Intents.  An example using [WebIntent](https://ionicframework.com/docs/native/web-intent) can be found under the [Transition_To_WebIntent_Ionic_6](https://github.com/ZebraDevs/DataWedge-Ionic-Demo/tree/Transition_To_WebIntent_Ionic_6) branch.
 
 ##  License
 This project is protected by Zebra's EULA, as detailed in the [License.md](./License.md) file
