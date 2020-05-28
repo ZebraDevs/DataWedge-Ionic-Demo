@@ -1,0 +1,93 @@
+<!--
+* Copyright (C) 2018 Zebra Technologies Corp
+* All rights reserved.
+-->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title color="light">
+      Zebra Ionic Datawedge Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-divider color="light">
+      Information / Configuration
+    </ion-item-divider>
+    <ion-item no-lines>
+      <ion-label position="stacked" color="primary">DataWedge version:</ion-label>
+      <ion-textarea rows="2" [ngClass]="{'attention' : uiDatawedgeVersionAttention}" [value]="dataWedgeVersion" [readonly]=true></ion-textarea>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label position="stacked" color="primary">Active Profile:</ion-label>
+      <ion-textarea rows="1" [value]="activeProfileText" [readonly]=true></ion-textarea>
+    </ion-item>
+    <ion-item no-lines [ngClass]="{'hide' : uiHideCommandMessages}">
+      <ion-label position="stacked" color="primary">Last API message:</ion-label>
+      <ion-textarea rows="1" [value]="commandResultText" [readonly]=true></ion-textarea>
+    </ion-item>
+    <ion-item no-lines [ngClass]="{'hide' : uiHideShowAvailableScanners}">
+      <ion-label position="stacked" color="primary">Available scanners:</ion-label>
+      <ion-textarea rows="7" [value]="availableScannersText"></ion-textarea>
+    </ion-item>
+    <ion-item no-lines [ngClass]="{'hide' : uiHideSelectScanner}">
+      <ion-label position="stacked" color="primary">Selected Scanner</ion-label>
+      <ion-select [(ngModel)]="selectedScanner" (ionChange)="scannerSelected()" okText="Select" cancelText="Dismiss">
+        <ion-select-option *ngFor="let scanner of scanners" [value]="scanner.SCANNER_NAME">{{scanner.SCANNER_NAME}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-grid>
+      <ion-label position="stacked" color="primary">Decoders:</ion-label>
+      <ion-row>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label>EAN 8</ion-label>
+            <ion-checkbox [(ngModel)]="ean8Decoder" (ionChange)="setDecoders()" [disabled]="uiHideDecoders"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label>EAN 13</ion-label>
+            <ion-checkbox [(ngModel)]="ean13Decoder" (ionChange)="setDecoders()" [disabled]="uiHideDecoders"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label>Code 39</ion-label>
+            <ion-checkbox [(ngModel)]="code39Decoder" (ionChange)="setDecoders()" [disabled]="uiHideDecoders"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-label>Code 128</ion-label>
+            <ion-checkbox [(ngModel)]="code128Decoder" (ionChange)="setDecoders()" [disabled]="uiHideDecoders"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item-divider color="light">
+      Scanned Barcodes
+    </ion-item-divider>
+    <ion-item no-lines *ngFor="let scan of scans">
+      <ion-label position="stacked" color="primary">{{ scan.timeAtDecode }} / {{ scan.type }}</ion-label>
+      <H1 item-content>{{ scan.data }}</H1>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-fab horizontal="end" vertical="bottom" [ngClass]="{'hide' : uiHideFloatingActionButton}">
+    <ion-fab-button color="secondary" (touchstart)="fabDown()" (touchend)="fabUp()">
+      <ion-icon name="barcode"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>
