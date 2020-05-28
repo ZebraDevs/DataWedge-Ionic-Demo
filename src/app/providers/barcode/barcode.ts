@@ -6,13 +6,14 @@
 import { Injectable } from '@angular/core';
 import { Events } from '../../services/events';
 import { Platform } from '@ionic/angular';
+import { WebIntent } from '@ionic-native/web-intent/ngx';
 
 @Injectable()
 export class BarcodeProvider {
 
   private requestResultCodes = "false";
 
-  constructor(public events: Events, private platform: Platform) {
+  constructor(public events: Events, private platform: Platform, public webintent: WebIntent) {
     this.platform.ready().then((readySource) => {
 
       let constructorInstance = this;
@@ -20,7 +21,7 @@ export class BarcodeProvider {
       //  The Datawedge service will respond via implicit broadcasts intents.  
       //  Responses may be the result of calling the Datawedge API or may be because a barcode was scanned
       //  Set up a broadcast receiver to listen for incoming scans
-      (<any>window).plugins.intentShim.registerBroadcastReceiver({
+      webintent.registerBroadcastReceiver({
         filterActions: [
           'com.zebra.ionicdemo.ACTION',           //  Response from scan (needs to match value in output plugin)
           'com.symbol.datawedge.api.RESULT_ACTION'//  Response from DataWedge service (as defined by API)
@@ -28,8 +29,7 @@ export class BarcodeProvider {
         filterCategories: [
           'android.intent.category.DEFAULT'
         ]
-      },
-        function (intent) {
+      }).subscribe((intent) => {
           //  Broadcast received
           console.log('Received Intent: ' + JSON.stringify(intent.extras));
   
@@ -89,16 +89,14 @@ export class BarcodeProvider {
   //  extraValue may be a String or a Bundle
   sendCommand(extraName: string, extraValue) {
     console.log("Sending Command: " + extraName + ", " + JSON.stringify(extraValue));
-    (<any>window).plugins.intentShim.sendBroadcast({
+    this.webintent.sendBroadcast({
       action: 'com.symbol.datawedge.api.ACTION',
       extras: {
         [extraName]: extraValue,
         "SEND_RESULT": this.requestResultCodes
       }
-    },
-      function () { },  //  Success in sending the intent, not success of DW to process the intent.
-      function () { }   //  Failure in sending the intent, not failure of DW to process the intent.
-    );
+    }).then(() => {});
+    
   }
 
 }
