@@ -3,8 +3,13 @@ This project shows a sample Ionic 3 application which uses DataWedge to capture 
 
 ![Application](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/application02.jpg)
 
-## Ionic v4 / v5 / v6N and WebIntent
-I have had several questions about whether this application works with Ionic v4 or v5 and issues surrounding the integration with [WebIntent](https://ionicframework.com/docs/native/web-intent).  This application has been written against Ionic v3 and uses the [Cordova plugin](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) directly however, if you would like to see a version of this application that compiles with Ionic v4 & v5 and uses [WebIntent](https://ionicframework.com/docs/native/web-intent) then please see the '[Transition_To_WebIntent](https://github.com/Zebra/ZebraIonicDemo/tree/Transition_To_WebIntent)' branch. 
+## Ionic v4 / v5 / v6
+The original ZebraIonicDemo was written to target Ionic v3 & users still wishing to target v3 should use the source code tagged v3.0, https://github.com/ZebraDevs/DataWedge-Ionic-Demo/tree/v3.0.
+
+The master branch of this application has been designed to target Ionic v6, including updated dependencies and addressing the breaking changes detailed at https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md
+
+## WebIntent
+The master branch of this project uses the [Cordova plugin](https://github.com/darryncampbell/darryncampbell-cordova-plugin-intent) directly to interface with Intents.  An example using [WebIntent](https://ionicframework.com/docs/native/web-intent) is **under work**.
 
 ##  License
 This project is protected by Zebra's EULA, as detailed in the [License.md](./License.md) file
