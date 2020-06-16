@@ -1,5 +1,5 @@
 # DataWedge Ionic Demo (Formally ZebraIonicDemo)
-This project shows a sample Ionic 3 application which uses DataWedge to capture barcode data on Zebra mobile devices
+This project shows a sample Ionic 6 application which uses DataWedge to capture barcode data on Zebra mobile devices
 
 ![Application](https://raw.githubusercontent.com/Zebra/ZebraIonicDemo/master/screenshots/application02.jpg)
 
